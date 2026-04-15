@@ -12,5 +12,7 @@ export interface Place {
   description: string;
   tags: string[];
   neighborhood?: string;
+  address?: string;
   category: PlaceCategory;
+  featured?: boolean;
 }
