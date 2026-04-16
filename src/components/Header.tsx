@@ -1,12 +1,25 @@
 export function Header() {
   return (
-    <header className="mb-10 border-y-4 border-double border-forest bg-forest px-6 py-8 text-center shadow-stamp-lg sm:py-10">
-      <h1 className="font-display text-4xl font-extrabold uppercase tracking-widest text-cream sm:text-5xl">
+    <header className="contour-bg relative mb-14 overflow-hidden border-b border-forest/30 pt-10 pb-8 text-center sm:pt-14 sm:pb-10">
+      <div className="rule-triple mx-auto mb-6 w-40 opacity-70" />
+
+      <p className="font-hand text-base text-pine sm:text-lg">
+        est. 2024 &middot; mile high &middot; co
+      </p>
+
+      <h1 className="mt-2 font-display text-5xl font-extrabold tracking-[0.08em] text-forest uppercase sm:text-6xl">
         The Denver Guide
       </h1>
-      <p className="mt-2 font-hand text-xl text-cream/80 sm:text-2xl">
-        a field companion to the mile-high city
-      </p>
+
+      <div className="mx-auto mt-4 flex max-w-md items-center gap-x-4 px-6">
+        <span className="h-px flex-1 bg-forest/30" />
+        <span className="font-hand text-sm text-brown sm:text-base">
+          a field companion to eat, drink &amp; wander
+        </span>
+        <span className="h-px flex-1 bg-forest/30" />
+      </div>
+
+      <div className="rule-triple mx-auto mt-8 w-40 opacity-70" />
     </header>
   );
 }

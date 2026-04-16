@@ -49,6 +49,7 @@ export const places: Place[] = [
     description:
       "Used outdoor goods — camping, hiking, climbing. Great spot to pick up gear without paying REI prices.",
     tags: ["outdoor-gear", "used", "local"],
+    neighborhood: "Berkeley",
     category: "shop",
   },
   {
@@ -77,6 +78,7 @@ export const places: Place[] = [
     description:
       "Wood-fired pizza and craft beer. Low-key, reliable, the kind of place that does one thing well.",
     tags: ["pizza", "beer", "casual"],
+    neighborhood: "Five Points",
     category: "restaurant",
   },
   {
@@ -105,6 +107,7 @@ export const places: Place[] = [
     description:
       "Taste your way through Colorado-made meads while learning more about honey and bees than you expected to care about.",
     tags: ["mead", "tasting", "quirky"],
+    neighborhood: "Boulder",
     category: "attraction",
   },
   {
@@ -113,6 +116,7 @@ export const places: Place[] = [
     description:
       "A kaleidoscopic, fully painted chapel sitting at the intersection of art and cannabis culture. Only in Denver.",
     tags: ["art", "quirky", "only-in-denver"],
+    neighborhood: "Wash Park",
     category: "attraction",
   },
   {
@@ -121,6 +125,7 @@ export const places: Place[] = [
     description:
       "Immersive, interactive art at full tilt — a fantasy world you wander through rather than just look at. Bring friends.",
     tags: ["art", "immersive", "group-friendly"],
+    neighborhood: "Sun Valley",
     category: "attraction",
   },
   {
@@ -129,6 +134,7 @@ export const places: Place[] = [
     description:
       "Tour Colorado's flagship whiskey distillery, learn the process, and taste the good stuff at the end.",
     tags: ["whiskey", "tour", "tasting"],
+    neighborhood: "Lincoln Park",
     category: "attraction",
   },
   {
@@ -192,8 +198,8 @@ export const places: Place[] = [
     description:
       "Trendy, welcoming Asian fusion — ramen-forward menu that holds up against just about anything in town.",
     tags: ["ramen", "asian", "dinner"],
-    neighborhood: "RiNo",
-    address: "2616 Walnut St, Denver, CO 80205",
+    neighborhood: "Highland",
+    address: "2215 W 32nd Ave, Denver, CO 80211",
     category: "restaurant",
   },
   {
@@ -202,6 +208,7 @@ export const places: Place[] = [
     description:
       "Tasting room for a solid local distillery. Cocktails are thoughtful and the space is the right kind of dressed-up.",
     tags: ["cocktails", "distillery", "date-night"],
+    neighborhood: "Highland",
     category: "bar",
   },
   {
@@ -210,6 +217,7 @@ export const places: Place[] = [
     description:
       "My favorite local distillery. The whiskey is the move.",
     tags: ["whiskey", "distillery", "local"],
+    neighborhood: "Lyons",
     category: "bar",
   },
   {
@@ -218,6 +226,7 @@ export const places: Place[] = [
     description:
       "One of my favorite Denver bars. Quirky, charming, solid drinks that won't break your wallet.",
     tags: ["cocktails", "neighborhood", "casual"],
+    neighborhood: "Uptown",
     category: "bar",
     featured: true,
   },
@@ -227,6 +236,7 @@ export const places: Place[] = [
     description:
       "Top-three brunch spot in town. Stellar baked goods — stop by Devil's Food next door after — and generous pours.",
     tags: ["brunch", "baked-goods", "weekend"],
+    neighborhood: "Wash Park",
     category: "restaurant",
   },
   {
@@ -263,6 +273,7 @@ export const places: Place[] = [
     description:
       "Probably my favorite local coffee chain if you want a solid latte. Locations have been multiplying lately — in a good way.",
     tags: ["coffee", "latte", "local"],
+    neighborhood: "Sunnyside",
     category: "coffee",
   },
   {
@@ -271,6 +282,7 @@ export const places: Place[] = [
     description:
       "My go-to local coffee chain. Several locations scattered around Denver, consistently excellent.",
     tags: ["coffee", "roaster", "local"],
+    neighborhood: "Platt Park",
     category: "coffee",
     featured: true,
   },
@@ -280,6 +292,7 @@ export const places: Place[] = [
     description:
       "Really solid pozole and mezcal-forward drinks. An ideal chilly-day move.",
     tags: ["mexican", "pozole", "mezcal"],
+    neighborhood: "Five Points",
     category: "restaurant",
   },
   {
@@ -288,6 +301,7 @@ export const places: Place[] = [
     description:
       "One of my favorite microbreweries, right in the middle of the city. Parking is miserable, but the beer's worth it.",
     tags: ["beer", "brewery", "neighborhood"],
+    neighborhood: "Jefferson Park",
     category: "bar",
   },
   {
@@ -296,6 +310,7 @@ export const places: Place[] = [
     description:
       "Stellar pastries. Get there early if you want the full selection — they sell out.",
     tags: ["bakery", "pastries", "morning"],
+    neighborhood: "Berkeley",
     category: "shop",
   },
   {
@@ -314,6 +329,7 @@ export const places: Place[] = [
     description:
       "My favorite breakfast burrito in Denver. It won a James Beard award. 'Nuff said.",
     tags: ["breakfast-burrito", "mexican", "iconic"],
+    neighborhood: "Lincoln Park",
     category: "restaurant",
     featured: true,
   },
@@ -333,6 +349,7 @@ export const places: Place[] = [
     description:
       "Heavy metal bar serving mouthwatering bites and cocktails. Get the Gwarled Cheese.",
     tags: ["dive", "cocktails", "metal", "late-night"],
+    neighborhood: "South Broadway",
     category: "bar",
     featured: true,
   },
@@ -342,6 +359,7 @@ export const places: Place[] = [
     description:
       "My second-favorite breakfast burrito in town. The inside is cramped — grab it to go.",
     tags: ["breakfast-burrito", "breakfast", "casual"],
+    neighborhood: "Uptown",
     category: "restaurant",
   },
   {
@@ -359,8 +377,210 @@ export const places: Place[] = [
     description:
       "Cozy, upscale Japanese pub food and drinks. Great experience top to bottom.",
     tags: ["japanese", "izakaya", "date-night"],
+    neighborhood: "Highland",
     category: "restaurant",
     featured: true,
+  },
+  {
+    id: "yacht-club",
+    name: "Yacht Club",
+    description:
+      "Award-winning cocktail bar — and you can snag a gourmet hot dog while you're at it. Nautical vibes, no pretense.",
+    tags: ["cocktails", "hot-dogs", "date-night"],
+    neighborhood: "Cole",
+    category: "bar",
+  },
+  {
+    id: "ashkara",
+    name: "Ash'Kara",
+    description:
+      "Wood-fired Middle Eastern from Alon Shaya. The pita is unreal and the lamb shoulder is a group-dinner showstopper.",
+    tags: ["middle-eastern", "wood-fired", "group-friendly"],
+    neighborhood: "RiNo",
+    category: "restaurant",
+  },
+  {
+    id: "safta",
+    name: "Safta",
+    description:
+      "Israeli food done beautifully — also Alon Shaya. The hummus alone is a destination. Inside The Source Hotel.",
+    tags: ["israeli", "brunch", "hummus"],
+    neighborhood: "RiNo",
+    category: "restaurant",
+  },
+  {
+    id: "rich-spirit",
+    name: "Rich Spirit",
+    description:
+      "Legit NY-style bagels in Denver — finally. Solid schmears, good coffee, and they sell out fast so don't sleep on it.",
+    tags: ["bagels", "breakfast", "coffee"],
+    neighborhood: "Wheat Ridge",
+    category: "restaurant",
+  },
+  {
+    id: "procession-coffee",
+    name: "Procession Coffee",
+    description:
+      "Specialty coffee with real intention behind every cup. Clean space, knowledgeable baristas, and they roast their own.",
+    tags: ["coffee", "specialty", "roaster"],
+    neighborhood: "Ballpark",
+    category: "coffee",
+  },
+  {
+    id: "the-golden-mill",
+    name: "The Golden Mill",
+    description:
+      "Massive food hall in Golden with self-pour beer and wine taps. Grab a pint, wander the vendors, sit by the creek.",
+    tags: ["food-hall", "self-pour", "beer", "creek-side"],
+    neighborhood: "Golden",
+    category: "bar",
+  },
+  {
+    id: "la-fillette",
+    name: "La Fillette",
+    description:
+      "French bakery with killer sandwiches. The bread is the real star — everything on it just works. Pastries are great too.",
+    tags: ["bakery", "sandwiches", "french", "pastries"],
+    neighborhood: "Mayfair",
+    category: "shop",
+  },
+  {
+    id: "run-for-the-roses",
+    name: "Run for the Roses",
+    description:
+      "Intimate cocktail bar with a bourbon-forward menu and a dark, romantic feel. Great for a slow evening drink.",
+    tags: ["cocktails", "bourbon", "date-night"],
+    neighborhood: "LoDo",
+    address: "Run for the Roses, Denver, CO",
+    category: "bar",
+  },
+  {
+    id: "westbound-and-down",
+    name: "Westbound & Down Brewing Company",
+    description:
+      "Excellent craft beer from the Idaho Springs crew, now with a Denver taproom. Great space, great beer.",
+    tags: ["beer", "brewery", "casual"],
+    neighborhood: "LoDo",
+    address: "1617 Blake St, Denver, CO 80202",
+    category: "bar",
+  },
+  {
+    id: "poka-lola",
+    name: "Poka Lola Social Club",
+    description:
+      "Bright, airy cocktail bar tucked inside The Source Hotel. Creative drinks, good energy, and a solid happy hour.",
+    tags: ["cocktails", "happy-hour", "casual"],
+    neighborhood: "RiNo",
+    address: "Poka Lola Social Club, Denver, CO",
+    category: "bar",
+  },
+  {
+    id: "the-wild",
+    name: "The Wild",
+    description:
+      "Coffee by day, cocktails by night. A dual-purpose spot in Boulder that does both well — cozy and worth lingering.",
+    tags: ["cocktails", "coffee", "casual"],
+    neighborhood: "Boulder",
+    address: "The Wild, Boulder, CO",
+    category: "bar",
+  },
+  {
+    id: "pony-up",
+    name: "Pony Up",
+    description:
+      "Honky-tonk bar with live music, cheap drinks, and a dance floor that actually gets used. No frills, big fun.",
+    tags: ["live-music", "late-night", "dive"],
+    neighborhood: "LoDo",
+    address: "Pony Up, Denver, CO",
+    category: "bar",
+  },
+  {
+    id: "jovaninas",
+    name: "Jovanina's Broken Italian",
+    description:
+      "Italian comfort food that doesn't play by the rules — creative pastas, bold flavors, and a fun atmosphere. The name says it all.",
+    tags: ["italian", "pasta", "date-night"],
+    neighborhood: "LoDo",
+    address: "Jovanina's Broken Italian, Denver, CO",
+    category: "restaurant",
+  },
+  {
+    id: "garage-sale-vintage",
+    name: "Garage Sale Vintage",
+    description:
+      "Curated vintage shop with a great eye — clothing, accessories, and home goods. The kind of place you always find something in.",
+    tags: ["vintage", "clothing", "local"],
+    neighborhood: "LoDo",
+    address: "Garage Sale Vintage, Denver, CO",
+    category: "shop",
+  },
+  {
+    id: "globe-hall",
+    name: "Globe Hall",
+    description:
+      "Underrated music venue with an intimate room and a great patio. The kind of place where you're ten feet from the band.",
+    tags: ["live-music", "intimate", "neighborhood"],
+    neighborhood: "Baker",
+    address: "Globe Hall, Denver, CO",
+    category: "attraction",
+  },
+  {
+    id: "barcelona-wine-bar",
+    name: "Barcelona Wine Bar",
+    description:
+      "Yeah, it's a chain — but it's a good one. Solid tapas, great wine list, and the patio is a vibe. No shame.",
+    tags: ["wine", "tapas", "date-night", "patio"],
+    neighborhood: "Ballpark",
+    address: "Barcelona Wine Bar, Denver, CO",
+    category: "bar",
+  },
+  {
+    id: "birdcall",
+    name: "Birdcall",
+    description:
+      "Local fast-food chain with solid fried chicken sandwiches. Quick, reliable, and way better than it has to be. Multiple locations around town.",
+    tags: ["chicken", "fast-casual", "local"],
+    category: "restaurant",
+  },
+  {
+    id: "hop-alley",
+    name: "Hop Alley",
+    description:
+      "Sichuan-leaning Chinese in a loud, fun room. The dan dan noodles are non-negotiable. Bring a group.",
+    tags: ["chinese", "spicy", "group-friendly"],
+    neighborhood: "RiNo",
+    address: "Hop Alley, Denver, CO",
+    category: "restaurant",
+  },
+  {
+    id: "two-moons",
+    name: "Two Moons Music Hall",
+    description:
+      "Has one of my favorite espresso martinis in town. Live music venue with a great bar — solid combo.",
+    tags: ["live-music", "cocktails", "espresso-martini"],
+    neighborhood: "RiNo",
+    address: "2944 Larimer St, Denver, CO 80205",
+    category: "bar",
+  },
+  {
+    id: "crema-coffee",
+    name: "Crema Coffee House",
+    description:
+      "Reliable neighborhood coffee shop with a warm atmosphere and solid espresso drinks. Good spot to post up and work.",
+    tags: ["coffee", "work-friendly", "neighborhood"],
+    neighborhood: "RiNo",
+    address: "Crema Coffee House, Denver, CO",
+    category: "coffee",
+  },
+  {
+    id: "casa-bonita",
+    name: "Casa Bonita",
+    description:
+      "The South Park episode was a documentary. Cliff divers, arcades, Black Bart's Cave — it's a theme park that happens to serve food. Revamped and actually good now.",
+    tags: ["iconic", "only-in-denver", "group-friendly"],
+    neighborhood: "Lakewood",
+    address: "6715 W Colfax Ave, Lakewood, CO 80214",
+    category: "attraction",
   },
 ];
 

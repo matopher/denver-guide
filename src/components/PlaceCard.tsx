@@ -1,62 +1,134 @@
 import { Place } from "@/data/types";
 import { TagBadge } from "./TagBadge";
+import { CategoryIcon } from "./CategoryIcon";
 
-const categoryLabels: Record<string, string> = {
-  restaurant: "EAT",
-  bar: "DRINK",
-  coffee: "COFFEE",
-  attraction: "SEE",
-  outdoors: "EXPLORE",
-  shop: "SHOP",
+type CategoryStyle = {
+  label: string;
+  text: string;
+  bg: string;
+  ring: string;
 };
 
-const rotations = [
-  "-rotate-[0.4deg]",
-  "rotate-[0.3deg]",
-  "-rotate-[0.2deg]",
-  "rotate-[0.5deg]",
-  "-rotate-[0.1deg]",
-  "rotate-[0.4deg]",
-];
+const categoryMeta: Record<Place["category"], CategoryStyle> = {
+  restaurant: {
+    label: "Eat",
+    text: "text-rust",
+    bg: "bg-rust/10",
+    ring: "ring-rust/25",
+  },
+  bar: {
+    label: "Drink",
+    text: "text-navy",
+    bg: "bg-navy/10",
+    ring: "ring-navy/25",
+  },
+  coffee: {
+    label: "Coffee",
+    text: "text-brown",
+    bg: "bg-brown/10",
+    ring: "ring-brown/25",
+  },
+  attraction: {
+    label: "See",
+    text: "text-ochre",
+    bg: "bg-ochre/15",
+    ring: "ring-ochre/30",
+  },
+  outdoors: {
+    label: "Explore",
+    text: "text-forest",
+    bg: "bg-forest/10",
+    ring: "ring-forest/25",
+  },
+  shop: {
+    label: "Shop",
+    text: "text-plum",
+    bg: "bg-plum/10",
+    ring: "ring-plum/25",
+  },
+};
 
-export function PlaceCard({ place, index }: { place: Place; index: number }) {
-  const rotation = rotations[index % rotations.length];
+export function PlaceCard({ place }: { place: Place }) {
+  const meta = categoryMeta[place.category];
 
   return (
-    <article
-      className={`relative border-3 border-forest/70 bg-cream p-5 pb-4 shadow-stamp-lg transition-transform hover:scale-[1.02] hover:shadow-stamp-lg ${rotation}`}
-    >
-      {/* Paper texture overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 128 128%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%221.2%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')] bg-repeat bg-[length:128px_128px] opacity-[0.03] mix-blend-multiply" />
+    <div className="stamp-shadow">
+      <article className="stamp-edge relative bg-cream p-3">
+        <div
+          className={`relative flex h-full flex-col p-5 pt-4 ${place.featured ? "border-2 border-rust/50" : "border border-dashed border-forest/30"}`}
+        >
+          {place.featured && (
+            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-cream px-4 py-0.5 font-hand text-sm text-rust">
+              ★ Favorite
+            </span>
+          )}
 
-      {/* Category stamp */}
-      <div className="category-stamp absolute -top-2 -right-2 rounded-sm border-2 border-rust bg-cream px-2 py-0.5 font-hand text-xs font-bold tracking-wider text-rust">
-        {categoryLabels[place.category] || place.category.toUpperCase()}
-      </div>
+          {/* top row: category + denomination */}
+          <div className="mb-4 flex items-start justify-between gap-x-3">
+            <div
+              className={`inline-flex items-center gap-x-1.5 rounded-sm px-2 py-1 ring-1 ring-inset ${meta.bg} ${meta.ring} ${meta.text}`}
+            >
+              <CategoryIcon
+                category={place.category}
+                className="size-4 shrink-0"
+              />
+              <span className="font-display text-xs font-semibold uppercase tracking-wider">
+                {meta.label}
+              </span>
+            </div>
 
-      {/* Neighborhood */}
-      {place.neighborhood && (
-        <p className="mb-1 font-hand text-sm text-pine">
-          {place.neighborhood}
-        </p>
-      )}
+            <div className="shrink-0 border border-forest/40 px-1.5 py-0.5 text-center font-display text-[0.6rem] leading-tight text-forest/80">
+              <div className="font-semibold uppercase tracking-widest">
+                Denver
+              </div>
+              <div className="tracking-widest">CO</div>
+            </div>
+          </div>
 
-      {/* Name */}
-      <h3 className="mb-2 font-display text-xl font-bold uppercase tracking-wide text-forest">
-        {place.name}
-      </h3>
+          {/* name + neighborhood */}
+          <h3 className="max-w-[22ch] font-display text-2xl font-semibold tracking-tight text-forest text-balance">
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.address ?? `${place.name} ${place.neighborhood ?? "Denver"} CO`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/link inline-flex items-baseline gap-x-1.5 transition-colors hover:text-pine"
+            >
+              {place.name}
+              <svg
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={1.5}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="size-3 shrink-0 self-center opacity-40 transition-opacity group-hover/link:opacity-70"
+                aria-hidden
+              >
+                <path d="M3.5 1.5h7m0 0v7m0-7L1.5 10.5" />
+              </svg>
+            </a>
+          </h3>
+          {place.neighborhood && (
+            <p className="mt-1 font-hand text-base text-pine">
+              {place.neighborhood}
+            </p>
+          )}
 
-      {/* Description */}
-      <p className="mb-3 font-body text-sm leading-relaxed text-brown">
-        {place.description}
-      </p>
+          {/* description */}
+          <p className="mt-3 mb-5 max-w-[60ch] text-[0.95rem] leading-relaxed text-ink/85 text-pretty">
+            {place.description}
+          </p>
 
-      {/* Tags */}
-      <div className="flex flex-wrap gap-1.5">
-        {place.tags.map((tag) => (
-          <TagBadge key={tag} tag={tag} />
-        ))}
-      </div>
-    </article>
+          {/* tags */}
+          <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
+            {place.tags.map((tag) => (
+              <TagBadge key={tag} tag={tag} />
+            ))}
+          </div>
+        </div>
+
+
+      </article>
+    </div>
   );
 }

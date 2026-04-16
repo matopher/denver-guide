@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { National_Park, Caveat } from "next/font/google";
+import { National_Park, Architects_Daughter } from "next/font/google";
 import "./globals.css";
 
 const nationalPark = National_Park({
@@ -8,10 +8,10 @@ const nationalPark = National_Park({
   weight: ["400", "500", "700", "800"],
 });
 
-const caveat = Caveat({
+const architectsDaughter = Architects_Daughter({
   subsets: ["latin"],
-  variable: "--font-caveat",
-  weight: ["400", "700"],
+  variable: "--font-architects",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${nationalPark.variable} ${caveat.variable} h-full antialiased`}
+      className={`${nationalPark.variable} ${architectsDaughter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

@@ -1,60 +1,93 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-parchment: #F5F0E8;
-  --color-cream: #FAF7F0;
-  --color-forest: #2D4A3E;
-  --color-pine: #3E6B5A;
-  --color-rust: #B7472A;
-  --color-burnt-orange: #D4773B;
-  --color-brown: #5C4033;
-  --color-navy: #1E3A5F;
-  --color-charcoal: #3A3A3A;
-  --color-stamp-red: #8B2500;
+  --color-parchment: #F2ECDF;
+  --color-parchment-light: #F8F3E6;
+  --color-cream: #FAF6EC;
+  --color-forest: #2F4A3D;
+  --color-pine: #486B5C;
+  --color-moss: #6B7F5B;
+  --color-rust: #A94A2A;
+  --color-burnt: #C77A3F;
+  --color-ochre: #C8923A;
+  --color-plum: #7A3B5C;
+  --color-brown: #5C4A3B;
+  --color-ink: #2E2823;
+  --color-navy: #253B55;
 
   --font-display: var(--font-national-park), "Georgia", serif;
   --font-body: var(--font-national-park), "Georgia", serif;
-  --font-hand: var(--font-caveat), cursive;
-
-  --shadow-stamp: 2px 2px 0px rgba(0, 0, 0, 0.15);
-  --shadow-stamp-lg: 3px 3px 0px rgba(0, 0, 0, 0.2);
+  --font-hand: var(--font-architects), "Caveat", cursive;
 }
 
 body {
   background-color: var(--color-parchment);
-  color: var(--color-brown);
+  color: var(--color-ink);
   font-family: var(--font-body);
 }
 
-/* Paper grain noise overlay */
+/* subtle paper grain over the whole page */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
 }
 
-/* Stamp border utility using scalloped edge */
-.stamp-border {
-  position: relative;
+/* faint topographic contour bleeds at the masthead corners */
+.contour-bg {
+  background-image:
+    radial-gradient(ellipse 900px 400px at 15% 0%, transparent 58%, rgba(47, 74, 61, 0.08) 58.4%, transparent 58.8%),
+    radial-gradient(ellipse 900px 400px at 15% 0%, transparent 64%, rgba(47, 74, 61, 0.06) 64.4%, transparent 64.8%),
+    radial-gradient(ellipse 900px 400px at 15% 0%, transparent 70%, rgba(47, 74, 61, 0.05) 70.4%, transparent 70.8%),
+    radial-gradient(ellipse 1100px 500px at 95% 100%, transparent 58%, rgba(47, 74, 61, 0.07) 58.4%, transparent 58.8%),
+    radial-gradient(ellipse 1100px 500px at 95% 100%, transparent 65%, rgba(47, 74, 61, 0.05) 65.4%, transparent 65.8%);
+  background-repeat: no-repeat;
 }
 
-.stamp-border::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  background: radial-gradient(circle, transparent 3px, var(--color-forest) 3px, var(--color-forest) 4px, transparent 4px) -4px -4px / 10px 10px;
-  z-index: -1;
-  border-radius: 2px;
+/* triple-rule divider used in masthead + footer */
+.rule-triple {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-forest) 0,
+    var(--color-forest) 1px,
+    transparent 1px,
+    transparent 4px,
+    var(--color-forest) 4px,
+    var(--color-forest) 6px,
+    transparent 6px,
+    transparent 9px,
+    var(--color-forest) 9px,
+    var(--color-forest) 10px
+  );
+  height: 10px;
 }
 
-/* Category stamp rotation */
-.category-stamp {
-  transform: rotate(-6deg);
-  opacity: 0.85;
+/* postage stamp — perforated scalloped edges via a composite mask */
+@utility stamp-edge {
+  --stamp-r: 6px;
+  --stamp-step: 14px;
+  --stamp-pad: calc(var(--stamp-step));
+  -webkit-mask:
+    radial-gradient(circle var(--stamp-r) at 50% 0, transparent 96%, #000) 50% 0 / var(--stamp-step) var(--stamp-step) repeat-x,
+    radial-gradient(circle var(--stamp-r) at 50% 100%, transparent 96%, #000) 50% 100% / var(--stamp-step) var(--stamp-step) repeat-x,
+    radial-gradient(circle var(--stamp-r) at 0 50%, transparent 96%, #000) 0 50% / var(--stamp-step) var(--stamp-step) repeat-y,
+    radial-gradient(circle var(--stamp-r) at 100% 50%, transparent 96%, #000) 100% 50% / var(--stamp-step) var(--stamp-step) repeat-y,
+    linear-gradient(#000 0 0) 50% 50% / calc(100% - (var(--stamp-step) * 2)) calc(100% - (var(--stamp-step) * 2)) no-repeat;
+  mask:
+    radial-gradient(circle var(--stamp-r) at 50% 0, transparent 96%, #000) 50% 0 / var(--stamp-step) var(--stamp-step) repeat-x,
+    radial-gradient(circle var(--stamp-r) at 50% 100%, transparent 96%, #000) 50% 100% / var(--stamp-step) var(--stamp-step) repeat-x,
+    radial-gradient(circle var(--stamp-r) at 0 50%, transparent 96%, #000) 0 50% / var(--stamp-step) var(--stamp-step) repeat-y,
+    radial-gradient(circle var(--stamp-r) at 100% 50%, transparent 96%, #000) 100% 50% / var(--stamp-step) var(--stamp-step) repeat-y,
+    linear-gradient(#000 0 0) 50% 50% / calc(100% - (var(--stamp-step) * 2)) calc(100% - (var(--stamp-step) * 2)) no-repeat;
+}
+
+/* drop-shadow (rather than box-shadow) so shadow follows the scalloped edge */
+.stamp-shadow {
+  filter: drop-shadow(2px 3px 0 rgba(46, 40, 35, 0.12)) drop-shadow(0 1px 1px rgba(46, 40, 35, 0.1));
 }
