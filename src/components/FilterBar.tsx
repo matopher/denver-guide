@@ -151,9 +151,14 @@ export function FilterBar({
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape" && hasActiveFilters) {
+      if (e.key === "Escape") {
         e.preventDefault();
-        resetAll();
+        if (hasActiveFilters) {
+          resetAll();
+        } else if (expanded) {
+          setExpanded(false);
+        }
+        searchRef.current?.blur();
         return;
       }
 
@@ -268,7 +273,7 @@ export function FilterBar({
                     className="inline-flex items-center gap-x-1 font-hand text-sm text-pine transition-colors hover:text-forest"
                   >
                     Clear
-                    <kbd className="inline-flex items-center rounded border border-forest/25 px-1 py-[1px] font-display text-[0.5rem] uppercase text-forest/50">
+                    <kbd className="inline-flex items-center rounded border border-forest/50 bg-forest/5 px-1 py-[1px] font-display text-[0.5rem] uppercase text-forest/80">
                       Esc
                     </kbd>
                   </button>
@@ -298,7 +303,7 @@ export function FilterBar({
           <>
             <span className="font-hand text-sm text-brown/60">
               Filter places…
-              <kbd className="ml-1.5 inline-flex items-center rounded border border-forest/25 px-1.5 py-0.5 font-display text-[0.55rem] uppercase text-forest/50">
+              <kbd className="ml-1.5 inline-flex items-center rounded border border-forest/50 bg-forest/5 px-1.5 py-0.5 font-display text-[0.55rem] uppercase text-forest/80">
                 F
               </kbd>
             </span>
@@ -313,7 +318,7 @@ export function FilterBar({
                   className="inline-flex items-center gap-x-1 font-hand text-sm text-pine transition-colors hover:text-forest"
                 >
                   Clear
-                  <kbd className="inline-flex items-center rounded border border-forest/25 px-1 py-[1px] font-display text-[0.5rem] uppercase text-forest/50">
+                  <kbd className="inline-flex items-center rounded border border-forest/50 bg-forest/5 px-1 py-[1px] font-display text-[0.5rem] uppercase text-forest/80">
                     Esc
                   </kbd>
                 </button>

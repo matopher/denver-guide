@@ -48,7 +48,7 @@ const categoryMeta: Record<Place["category"], CategoryStyle> = {
   },
 };
 
-export function PlaceCard({ place }: { place: Place }) {
+export function PlaceCard({ place, index }: { place: Place; index: number }) {
   const meta = categoryMeta[place.category];
 
   return (
@@ -58,7 +58,7 @@ export function PlaceCard({ place }: { place: Place }) {
           className={`relative flex h-full flex-col p-5 pt-4 ${place.featured ? "border-2 border-rust/50" : "border border-dashed border-forest/30"}`}
         >
           {place.featured && (
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-cream px-4 py-0.5 font-hand text-sm text-rust">
+            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-cream px-4 py-0.5 font-hand text-[0.65rem] font-semibold uppercase tracking-wider text-rust">
               ★ Favorite
             </span>
           )}
@@ -77,11 +77,10 @@ export function PlaceCard({ place }: { place: Place }) {
               </span>
             </div>
 
-            <div className="shrink-0 border border-forest/40 px-1.5 py-0.5 text-center font-display text-[0.6rem] leading-tight text-forest/80">
-              <div className="font-semibold uppercase tracking-widest">
-                Denver
+            <div className="shrink-0 border border-forest/40 px-2 py-1 text-center font-display text-[0.6rem] leading-tight text-forest/80">
+              <div className="font-semibold tracking-widest">
+                No. {String(index + 1).padStart(2, "0")}
               </div>
-              <div className="tracking-widest">CO</div>
             </div>
           </div>
 
@@ -109,7 +108,7 @@ export function PlaceCard({ place }: { place: Place }) {
             </a>
           </h3>
           {place.neighborhood && (
-            <p className="mt-1 font-hand text-base text-pine">
+            <p className="mt-1 font-hand text-xs font-semibold uppercase tracking-wider text-pine">
               {place.neighborhood}
             </p>
           )}

@@ -16,8 +16,8 @@
   --color-navy: #253B55;
 
   --font-display: var(--font-national-park), "Georgia", serif;
-  --font-body: var(--font-national-park), "Georgia", serif;
-  --font-hand: var(--font-architects), "Caveat", cursive;
+  --font-body: var(--font-inter), "Inter", sans-serif;
+  --font-hand: var(--font-inter), "Inter", sans-serif;
 }
 
 body {
@@ -39,15 +39,32 @@ body::before {
   background-size: 256px 256px;
 }
 
-/* faint topographic contour bleeds at the masthead corners */
+/* vintage map header — topo contours + survey grid */
 .contour-bg {
   background-image:
-    radial-gradient(ellipse 900px 400px at 15% 0%, transparent 58%, rgba(47, 74, 61, 0.08) 58.4%, transparent 58.8%),
-    radial-gradient(ellipse 900px 400px at 15% 0%, transparent 64%, rgba(47, 74, 61, 0.06) 64.4%, transparent 64.8%),
-    radial-gradient(ellipse 900px 400px at 15% 0%, transparent 70%, rgba(47, 74, 61, 0.05) 70.4%, transparent 70.8%),
-    radial-gradient(ellipse 1100px 500px at 95% 100%, transparent 58%, rgba(47, 74, 61, 0.07) 58.4%, transparent 58.8%),
-    radial-gradient(ellipse 1100px 500px at 95% 100%, transparent 65%, rgba(47, 74, 61, 0.05) 65.4%, transparent 65.8%);
-  background-repeat: no-repeat;
+    /* topo contour cluster — upper left */
+    radial-gradient(ellipse 700px 350px at 8% -10%, transparent 40%, rgba(47, 74, 61, 0.10) 40.3%, transparent 40.7%),
+    radial-gradient(ellipse 700px 350px at 8% -10%, transparent 46%, rgba(47, 74, 61, 0.08) 46.3%, transparent 46.7%),
+    radial-gradient(ellipse 700px 350px at 8% -10%, transparent 52%, rgba(47, 74, 61, 0.07) 52.3%, transparent 52.7%),
+    radial-gradient(ellipse 700px 350px at 8% -10%, transparent 58%, rgba(47, 74, 61, 0.06) 58.3%, transparent 58.7%),
+    radial-gradient(ellipse 700px 350px at 8% -10%, transparent 64%, rgba(47, 74, 61, 0.05) 64.3%, transparent 64.7%),
+    radial-gradient(ellipse 700px 350px at 8% -10%, transparent 70%, rgba(47, 74, 61, 0.04) 70.3%, transparent 70.7%),
+    /* topo contour cluster — lower right */
+    radial-gradient(ellipse 800px 380px at 92% 110%, transparent 42%, rgba(47, 74, 61, 0.09) 42.3%, transparent 42.7%),
+    radial-gradient(ellipse 800px 380px at 92% 110%, transparent 49%, rgba(47, 74, 61, 0.07) 49.3%, transparent 49.7%),
+    radial-gradient(ellipse 800px 380px at 92% 110%, transparent 56%, rgba(47, 74, 61, 0.06) 56.3%, transparent 56.7%),
+    radial-gradient(ellipse 800px 380px at 92% 110%, transparent 63%, rgba(47, 74, 61, 0.05) 63.3%, transparent 63.7%),
+    radial-gradient(ellipse 800px 380px at 92% 110%, transparent 70%, rgba(47, 74, 61, 0.04) 70.3%, transparent 70.7%),
+    /* small contour — mid right */
+    radial-gradient(ellipse 300px 200px at 78% 30%, transparent 50%, rgba(47, 74, 61, 0.06) 50.4%, transparent 50.8%),
+    radial-gradient(ellipse 300px 200px at 78% 30%, transparent 60%, rgba(47, 74, 61, 0.05) 60.4%, transparent 60.8%),
+    /* survey grid */
+    repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(47, 74, 61, 0.04) 59px, rgba(47, 74, 61, 0.04) 60px),
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(47, 74, 61, 0.04) 59px, rgba(47, 74, 61, 0.04) 60px);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat,
+    repeat, repeat;
 }
 
 /* triple-rule divider used in masthead + footer */

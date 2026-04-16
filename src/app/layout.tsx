@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { National_Park, Architects_Daughter } from "next/font/google";
+import { National_Park, Inter } from "next/font/google";
 import "./globals.css";
 
 const nationalPark = National_Park({
@@ -8,14 +8,13 @@ const nationalPark = National_Park({
   weight: ["400", "500", "700", "800"],
 });
 
-const architectsDaughter = Architects_Daughter({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-architects",
-  weight: ["400"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "The Denver Guide",
+  title: "Hey, Denver!",
   description:
     "A field companion to restaurants, bars, attractions, and hidden gems in the Denver metro area.",
 };
@@ -28,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${nationalPark.variable} ${architectsDaughter.variable} h-full antialiased`}
+      className={`${nationalPark.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
