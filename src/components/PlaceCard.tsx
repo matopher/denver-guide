@@ -30,9 +30,9 @@ const categoryMeta: Record<Place["category"], CategoryStyle> = {
   },
   attraction: {
     label: "See",
-    text: "text-ochre",
-    bg: "bg-ochre/15",
-    ring: "ring-ochre/30",
+    text: "text-ochre-dark",
+    bg: "bg-ochre/25",
+    ring: "ring-ochre/50",
   },
   outdoors: {
     label: "Explore",
@@ -48,7 +48,7 @@ const categoryMeta: Record<Place["category"], CategoryStyle> = {
   },
 };
 
-export function PlaceCard({ place, index }: { place: Place; index: number }) {
+export function PlaceCard({ place }: { place: Place }) {
   const meta = categoryMeta[place.category];
 
   return (
@@ -77,11 +77,6 @@ export function PlaceCard({ place, index }: { place: Place; index: number }) {
               </span>
             </div>
 
-            <div className="shrink-0 border border-forest/40 px-2 py-1 text-center font-display text-[0.6rem] leading-tight text-forest/80">
-              <div className="font-semibold tracking-widest">
-                No. {String(index + 1).padStart(2, "0")}
-              </div>
-            </div>
           </div>
 
           {/* name + neighborhood */}
@@ -118,12 +113,7 @@ export function PlaceCard({ place, index }: { place: Place; index: number }) {
             {place.description}
           </p>
 
-          {/* tags */}
-          <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
-            {place.tags.map((tag) => (
-              <TagBadge key={tag} tag={tag} />
-            ))}
-          </div>
+          {/* tags — hidden for now */}
         </div>
 
 

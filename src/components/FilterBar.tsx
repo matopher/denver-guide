@@ -273,7 +273,7 @@ export function FilterBar({
                     className="inline-flex items-center gap-x-1 font-hand text-sm text-pine transition-colors hover:text-forest"
                   >
                     Clear
-                    <kbd className="inline-flex items-center rounded border border-forest/50 bg-forest/5 px-1 py-[1px] font-display text-[0.5rem] uppercase text-forest/80">
+                    <kbd className="pointer-events-none inline-flex items-center rounded border border-forest/50 bg-forest/5 px-1 py-[1px] font-display text-[0.5rem] uppercase text-forest/80">
                       Esc
                     </kbd>
                   </button>
@@ -301,12 +301,16 @@ export function FilterBar({
           </>
         ) : (
           <>
-            <span className="font-hand text-sm text-brown/60">
+            <button
+              type="button"
+              onClick={toggle}
+              className="inline-flex items-center font-hand text-sm text-brown/60 hover:text-brown transition-colors"
+            >
               Filter places…
               <kbd className="ml-1.5 inline-flex items-center rounded border border-forest/50 bg-forest/5 px-1.5 py-0.5 font-display text-[0.55rem] uppercase text-forest/80">
                 F
               </kbd>
-            </span>
+            </button>
             {hasActiveFilters && (
               <>
                 <span className="font-hand text-sm text-brown">
@@ -318,7 +322,7 @@ export function FilterBar({
                   className="inline-flex items-center gap-x-1 font-hand text-sm text-pine transition-colors hover:text-forest"
                 >
                   Clear
-                  <kbd className="inline-flex items-center rounded border border-forest/50 bg-forest/5 px-1 py-[1px] font-display text-[0.5rem] uppercase text-forest/80">
+                  <kbd className="pointer-events-none inline-flex items-center rounded border border-forest/50 bg-forest/5 px-1 py-[1px] font-display text-[0.5rem] uppercase text-forest/80">
                     Esc
                   </kbd>
                 </button>

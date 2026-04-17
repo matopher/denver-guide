@@ -34,16 +34,6 @@ export const places: Place[] = [
     featured: true,
   },
   {
-    id: "linger",
-    name: "Linger",
-    description:
-      "Was once a mortuary, now a restaurant with a rooftop bar offering killer views and street food from around the world.",
-    tags: ["rooftop", "views", "global", "date-night"],
-    neighborhood: "LoHi",
-    address: "2030 W 30th Ave, Denver, CO 80211",
-    category: "restaurant",
-  },
-  {
     id: "feral",
     name: "Feral Outdoor Supply",
     description:
