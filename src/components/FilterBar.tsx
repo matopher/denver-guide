@@ -3,6 +3,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { PlaceCategory } from "@/data/types";
 
+function track(event: string, properties?: Record<string, unknown>) {
+  try {
+    const ph = require("posthog-js").default;
+    if (ph?.__loaded) ph.capture(event, properties);
+  } catch {}
+}
+
 const categoryOptions: { value: PlaceCategory; label: string }[] = [
   { value: "restaurant", label: "Eat" },
   { value: "bar", label: "Drink" },
@@ -136,6 +143,7 @@ export function FilterBar({
     filters.search.length > 0;
 
   const resetAll = useCallback(() => {
+    track("filters_cleared");
     onChange(emptyFilters);
     setExpanded(false);
   }, [onChange]);
@@ -143,7 +151,10 @@ export function FilterBar({
   const toggle = useCallback(() => {
     setExpanded((v) => {
       if (!v) {
+        track("filter_opened");
         setTimeout(() => searchRef.current?.focus(), 0);
+      } else {
+        track("filter_closed");
       }
       return !v;
     });
@@ -198,6 +209,11 @@ export function FilterBar({
                 onChange={(e) =>
                   onChange({ ...filters, search: e.target.value })
                 }
+                onBlur={(e) => {
+                  if (e.target.value) {
+                    track("filter_search_submitted", { query: e.target.value });
+                  }
+                }}
                 placeholder="Search places…"
                 className="w-40 rounded-sm border border-forest/30 bg-cream px-3 py-1.5 font-hand text-sm text-ink placeholder:text-brown/40 focus:border-forest/60 focus:outline-none sm:w-48"
               />
@@ -236,6 +252,7 @@ export function FilterBar({
                 const cat = v
                   ? categoryOptions.find((c) => c.label === v)?.value ?? null
                   : null;
+                if (cat) track("filter_category_selected", { category: cat });
                 onChange({ ...filters, category: cat });
               }}
             />
@@ -244,14 +261,18 @@ export function FilterBar({
               label="Neighborhood…"
               value={filters.neighborhood}
               options={neighborhoods}
-              onChange={(v) => onChange({ ...filters, neighborhood: v })}
+              onChange={(v) => {
+                if (v) track("filter_neighborhood_selected", { neighborhood: v });
+                onChange({ ...filters, neighborhood: v });
+              }}
             />
 
             <button
               type="button"
-              onClick={() =>
-                onChange({ ...filters, favorites: !filters.favorites })
-              }
+              onClick={() => {
+                track("filter_favorites_toggled", { enabled: !filters.favorites });
+                onChange({ ...filters, favorites: !filters.favorites });
+              }}
               className={`inline-flex items-center gap-x-1 rounded-sm border px-3 py-1.5 font-display text-xs font-medium uppercase tracking-wider transition-colors ${
                 filters.favorites
                   ? "border-rust bg-rust/10 text-rust"
@@ -264,7 +285,7 @@ export function FilterBar({
             <div className="ml-auto flex items-center gap-x-3">
               {hasActiveFilters && (
                 <>
-                  <span className="font-hand text-sm text-brown">
+                  <span className="font-hand text-sm tabular-nums text-brown">
                     {resultCount} of {totalCount}
                   </span>
                   <button

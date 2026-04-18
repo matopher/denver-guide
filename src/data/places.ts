@@ -5,7 +5,7 @@ export const places: Place[] = [
     id: "bohemian-biergarten",
     name: "Bohemian Biergarten",
     description:
-      "A bit of a drive up to Boulder, but every German-style dish is ridiculously good and genuinely authentic. Worth the trip.",
+      "A bit of a drive up to Boulder, but every German-style dish is ridiculously good and genuinely authentic.",
     tags: ["beer", "german", "group-friendly"],
     neighborhood: "Boulder",
     address: "2017 13th St, Boulder, CO 80302",
@@ -50,7 +50,6 @@ export const places: Place[] = [
     tags: ["tiki", "cocktails", "date-night"],
     neighborhood: "Baker",
     category: "bar",
-    featured: true,
   },
   {
     id: "cart-driver",
@@ -75,7 +74,7 @@ export const places: Place[] = [
     id: "bao-brewhouse",
     name: "Bao Brewhouse",
     description:
-      "Cozy taproom in Aurora doing inventive bao buns alongside a rotating craft beer list. Worth the drive.",
+      "Cozy taproom in Aurora doing inventive bao buns alongside a rotating craft beer list.",
     tags: ["beer", "bao", "casual"],
     neighborhood: "Aurora",
     address: "13971 E Exposition Ave, Aurora, CO 80012",
@@ -159,7 +158,7 @@ export const places: Place[] = [
     id: "sweet-cow",
     name: "Sweet Cow Ice Cream",
     description:
-      "Local ice cream done right. Rotating flavors, nothing too precious. The salted Oreo is life-changing if they have it.",
+      "Local ice cream done right. Rotating flavors, nothing too precious. I've heard great things about the salted Oreo.",
     tags: ["dessert", "family-friendly", "casual"],
     neighborhood: "LoHi",
     address: "2628 W 32nd Ave, Denver, CO 80211 (+ other locations)",
@@ -234,7 +233,7 @@ export const places: Place[] = [
     id: "new-image-artys",
     name: "New Image Brewing + Arty's Burgers",
     description:
-      "Favorite burger-and-beer combo in Denver by a long shot. Olde Town Arvada, worth the drive.",
+      "Favorite burger-and-beer combo in Denver by a long shot. Olde Town Arvada.",
     tags: ["burger", "beer", "casual"],
     neighborhood: "Olde Town Arvada",
     category: "bar",
@@ -389,6 +388,7 @@ export const places: Place[] = [
     tags: ["israeli", "brunch", "hummus"],
     neighborhood: "RiNo",
     category: "restaurant",
+    featured: true,
   },
   {
     id: "rich-spirit",
@@ -470,7 +470,7 @@ export const places: Place[] = [
     id: "pony-up",
     name: "Pony Up",
     description:
-      "Honky-tonk bar with live music, cheap drinks, and a dance floor that actually gets used. No frills, big fun.",
+      "Honky-tonk bar with live music and cheap drinks. No frills, big fun.",
     tags: ["live-music", "late-night", "dive"],
     neighborhood: "LoDo",
     address: "Pony Up, Denver, CO",
@@ -573,6 +573,16 @@ export const places: Place[] = [
     neighborhood: "Denver",
     category: "shop",
     featured: true,
+  },
+  {
+    id: "recess-beer-garden",
+    name: "Recess Beer Garden",
+    description:
+      "Awesome spot to hang with a group. Big patio, solid beer selection, and a laid-back vibe that makes it easy to stay longer than planned.",
+    tags: ["beer", "patio", "group-friendly"],
+    neighborhood: "Jefferson Park",
+    address: "2715 W 17th Ave, Denver, CO 80204",
+    category: "bar",
   },
   {
     id: "berkeley-supply",
