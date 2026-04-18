@@ -3,7 +3,15 @@ export function Footer() {
     <footer className="mt-24 pb-12 text-center">
       <div className="rule-triple mx-auto mb-4 w-32 opacity-60" />
       <p className="font-hand text-xs font-semibold uppercase tracking-[0.2em] text-brown">
-        made with care &middot; denver, colorado
+        made with ♥ from mile high by{" "}
+        <a
+          href="https://mattwoods.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-pine transition-colors hover:text-forest"
+        >
+          Matt Woods
+        </a>
       </p>
     </footer>
   );

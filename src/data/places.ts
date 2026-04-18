@@ -37,7 +37,7 @@ export const places: Place[] = [
     id: "feral",
     name: "Feral Outdoor Supply",
     description:
-      "Used outdoor goods — camping, hiking, climbing. Great spot to pick up gear without paying REI prices.",
+      "Used outdoor goods: camping, hiking, climbing. Great spot to pick up gear without paying REI prices.",
     tags: ["outdoor-gear", "used", "local"],
     neighborhood: "Berkeley",
     category: "shop",
@@ -85,7 +85,7 @@ export const places: Place[] = [
     id: "death-and-co",
     name: "Death & Co",
     description:
-      "A unique and unforgettable dining experience with expertly crafted cocktails. The NYC transplant that actually earned its spot — go on a weeknight.",
+      "A unique and unforgettable dining experience with expertly crafted cocktails. The NYC transplant that actually earned its spot. Go on a weeknight.",
     tags: ["cocktails", "date-night", "moody"],
     neighborhood: "RiNo",
     category: "bar",
@@ -101,21 +101,13 @@ export const places: Place[] = [
     category: "attraction",
   },
   {
-    id: "international-church-of-cannabis",
-    name: "International Church of Cannabis",
-    description:
-      "A kaleidoscopic, fully painted chapel sitting at the intersection of art and cannabis culture. Only in Denver.",
-    tags: ["art", "quirky", "only-in-denver"],
-    neighborhood: "Wash Park",
-    category: "attraction",
-  },
-  {
     id: "meow-wolf",
     name: "Meow Wolf",
     description:
-      "Immersive, interactive art at full tilt — a fantasy world you wander through rather than just look at. Bring friends.",
+      "Immersive, interactive art at full tilt. A fantasy world you wander through rather than just look at. Bring friends.",
     tags: ["art", "immersive", "group-friendly"],
-    neighborhood: "Sun Valley",
+    neighborhood: "West Denver",
+    address: "1338 1st St, Denver, CO 80204",
     category: "attraction",
   },
   {
@@ -131,7 +123,7 @@ export const places: Place[] = [
     id: "red-rocks",
     name: "Red Rocks Amphitheatre",
     description:
-      "The iconic outdoor amphitheater. Go for a concert, but also go for a sunrise workout or a random Tuesday hike — the geology alone is worth it.",
+      "The iconic outdoor amphitheater. Go for a concert, but also go for a sunrise workout or a random Tuesday hike. The geology alone is worth it.",
     tags: ["concerts", "iconic", "views", "hiking", "outdoors"],
     neighborhood: "Morrison",
     category: "outdoors",
@@ -167,7 +159,7 @@ export const places: Place[] = [
     id: "sweet-cow",
     name: "Sweet Cow Ice Cream",
     description:
-      "Local ice cream done right. Rotating flavors, nothing too precious — the salted Oreo is life-changing if they have it.",
+      "Local ice cream done right. Rotating flavors, nothing too precious. The salted Oreo is life-changing if they have it.",
     tags: ["dessert", "family-friendly", "casual"],
     neighborhood: "LoHi",
     address: "2628 W 32nd Ave, Denver, CO 80211 (+ other locations)",
@@ -177,7 +169,7 @@ export const places: Place[] = [
     id: "little-man-ice-cream",
     name: "Little Man Ice Cream",
     description:
-      "Local ice cream, charming walk-up atmosphere, giant milk-can building you can't miss. Expect a line — it's worth it.",
+      "Local ice cream, charming walk-up atmosphere, giant milk-can building you can't miss.",
     tags: ["dessert", "iconic", "family-friendly"],
     neighborhood: "LoHi",
     category: "shop",
@@ -186,7 +178,7 @@ export const places: Place[] = [
     id: "uncle",
     name: "Uncle",
     description:
-      "Trendy, welcoming Asian fusion — ramen-forward menu that holds up against just about anything in town.",
+      "Trendy, welcoming Asian fusion. Ramen-forward menu that holds up against just about anything in town.",
     tags: ["ramen", "asian", "dinner"],
     neighborhood: "Highland",
     address: "2215 W 32nd Ave, Denver, CO 80211",
@@ -205,7 +197,7 @@ export const places: Place[] = [
     id: "spirit-hound",
     name: "Spirit Hound Distillers",
     description:
-      "My favorite local distillery. The whiskey is the move.",
+      "My favorite local distillery. The honey whiskey is the move.",
     tags: ["whiskey", "distillery", "local"],
     neighborhood: "Lyons",
     category: "bar",
@@ -224,7 +216,7 @@ export const places: Place[] = [
     id: "cookery-myrtle-hill",
     name: "The Cookery at Myrtle Hill",
     description:
-      "Top-three brunch spot in town. Stellar baked goods — stop by Devil's Food next door after — and generous pours.",
+      "Top-three brunch spot in town. Stellar baked goods (stop by Devil's Food next door after) and generous pours.",
     tags: ["brunch", "baked-goods", "weekend"],
     neighborhood: "Wash Park",
     category: "restaurant",
@@ -261,7 +253,7 @@ export const places: Place[] = [
     id: "huckleberry",
     name: "Huckleberry Roasters",
     description:
-      "Probably my favorite local coffee chain if you want a solid latte. Locations have been multiplying lately — in a good way.",
+      "Probably my favorite local coffee chain if you want a solid latte. Locations have been multiplying lately, in a good way.",
     tags: ["coffee", "latte", "local"],
     neighborhood: "Sunnyside",
     category: "coffee",
@@ -298,16 +290,16 @@ export const places: Place[] = [
     id: "bakery-four",
     name: "Bakery Four",
     description:
-      "Stellar pastries. Get there early if you want the full selection — they sell out.",
+      "Stellar pastries. Get there early if you want the full selection. They sell out.",
     tags: ["bakery", "pastries", "morning"],
     neighborhood: "Berkeley",
-    category: "shop",
+    category: "restaurant",
   },
   {
     id: "twansburger",
     name: "Twansburger",
     description:
-      "Top-two burger in Denver for my money. Started by a former Wolf's Tailor cook — two menu items, both bangers if you like crispy smashburgers and perfect fries. Located in Finn's Manor; grab a drink while you're there.",
+      "Top-two burger in Denver for my money. Started by a former Wolf's Tailor cook. Two menu items, both bangers if you like crispy smashburgers and perfect fries. Located in Finn's Manor; grab a drink while you're there.",
     tags: ["burger", "smashburger", "casual"],
     neighborhood: "RiNo",
     address: "Finn's Manor, Denver, CO",
@@ -327,7 +319,7 @@ export const places: Place[] = [
     id: "denver-central-market",
     name: "Denver Central Market",
     description:
-      "Fun food hall in RiNo with a broad spread of options — coffee, oysters, pasta, pastries, drinks. Good for groups who can't agree.",
+      "Fun food hall in RiNo with a broad spread of options: coffee, oysters, pasta, pastries, drinks. Good for groups who can't agree.",
     tags: ["food-hall", "group-friendly", "variety"],
     neighborhood: "RiNo",
     address: "2669 Larimer St, Denver, CO 80205",
@@ -347,7 +339,7 @@ export const places: Place[] = [
     id: "onefold",
     name: "Onefold",
     description:
-      "My second-favorite breakfast burrito in town. The inside is cramped — grab it to go.",
+      "My second-favorite breakfast burrito in town. The inside is cramped, so grab it to go.",
     tags: ["breakfast-burrito", "breakfast", "casual"],
     neighborhood: "Uptown",
     category: "restaurant",
@@ -375,7 +367,7 @@ export const places: Place[] = [
     id: "yacht-club",
     name: "Yacht Club",
     description:
-      "Award-winning cocktail bar — and you can snag a gourmet hot dog while you're at it. Nautical vibes, no pretense.",
+      "Award-winning cocktail bar where you can also snag a gourmet hot dog. Nautical vibes, no pretense.",
     tags: ["cocktails", "hot-dogs", "date-night"],
     neighborhood: "Cole",
     category: "bar",
@@ -393,7 +385,7 @@ export const places: Place[] = [
     id: "safta",
     name: "Safta",
     description:
-      "Israeli food done beautifully — also Alon Shaya. The hummus alone is a destination. Inside The Source Hotel.",
+      "Israeli food done beautifully, also from Alon Shaya. The hummus alone is a destination. Inside The Source Hotel.",
     tags: ["israeli", "brunch", "hummus"],
     neighborhood: "RiNo",
     category: "restaurant",
@@ -402,7 +394,7 @@ export const places: Place[] = [
     id: "rich-spirit",
     name: "Rich Spirit",
     description:
-      "Legit NY-style bagels in Denver — finally. Solid schmears, good coffee, and they sell out fast so don't sleep on it.",
+      "Legit NY-style bagels in Denver, finally. Solid schmears, good coffee, and they sell out fast so don't sleep on it.",
     tags: ["bagels", "breakfast", "coffee"],
     neighborhood: "Wheat Ridge",
     category: "restaurant",
@@ -429,7 +421,7 @@ export const places: Place[] = [
     id: "la-fillette",
     name: "La Fillette",
     description:
-      "French bakery with killer sandwiches. The bread is the real star — everything on it just works. Pastries are great too.",
+      "French bakery with killer sandwiches. The bread is the real star; everything on it just works. Pastries are great too.",
     tags: ["bakery", "sandwiches", "french", "pastries"],
     neighborhood: "Mayfair",
     category: "shop",
@@ -468,7 +460,7 @@ export const places: Place[] = [
     id: "the-wild",
     name: "The Wild",
     description:
-      "Coffee by day, cocktails by night. A dual-purpose spot in Boulder that does both well — cozy and worth lingering.",
+      "Coffee by day, cocktails by night. A dual-purpose spot in Boulder that does both well. Cozy and worth lingering.",
     tags: ["cocktails", "coffee", "casual"],
     neighborhood: "Boulder",
     address: "The Wild, Boulder, CO",
@@ -488,7 +480,7 @@ export const places: Place[] = [
     id: "jovaninas",
     name: "Jovanina's Broken Italian",
     description:
-      "Italian comfort food that doesn't play by the rules — creative pastas, bold flavors, and a fun atmosphere. The name says it all.",
+      "Italian comfort food that doesn't play by the rules. Creative pastas, bold flavors, and a fun atmosphere. The name says it all.",
     tags: ["italian", "pasta", "date-night"],
     neighborhood: "LoDo",
     address: "Jovanina's Broken Italian, Denver, CO",
@@ -498,7 +490,7 @@ export const places: Place[] = [
     id: "garage-sale-vintage",
     name: "Garage Sale Vintage",
     description:
-      "Curated vintage shop with a great eye — clothing, accessories, and home goods. The kind of place you always find something in.",
+      "Curated vintage shop with a great eye. Clothing, accessories, and home goods. The kind of place you always find something in.",
     tags: ["vintage", "clothing", "local"],
     neighborhood: "LoDo",
     address: "Garage Sale Vintage, Denver, CO",
@@ -518,7 +510,7 @@ export const places: Place[] = [
     id: "barcelona-wine-bar",
     name: "Barcelona Wine Bar",
     description:
-      "Yeah, it's a chain — but it's a good one. Solid tapas, great wine list, and the patio is a vibe. No shame.",
+      "Yeah, it's a chain, but it's a good one. Solid tapas, great wine list, and the patio is a vibe. No shame.",
     tags: ["wine", "tapas", "date-night", "patio"],
     neighborhood: "Ballpark",
     address: "Barcelona Wine Bar, Denver, CO",
@@ -546,7 +538,7 @@ export const places: Place[] = [
     id: "two-moons",
     name: "Two Moons Music Hall",
     description:
-      "Has one of my favorite espresso martinis in town. Live music venue with a great bar — solid combo.",
+      "Has one of my favorite espresso martinis in town. Live music venue with a great bar. Solid combo.",
     tags: ["live-music", "cocktails", "espresso-martini"],
     neighborhood: "RiNo",
     address: "2944 Larimer St, Denver, CO 80205",
@@ -566,11 +558,31 @@ export const places: Place[] = [
     id: "casa-bonita",
     name: "Casa Bonita",
     description:
-      "The South Park episode was a documentary. Cliff divers, arcades, Black Bart's Cave — it's a theme park that happens to serve food. Revamped and actually good now.",
+      "The South Park episode was a documentary. Cliff divers, arcades, Black Bart's Cave. It's a theme park that happens to serve food. Revamped and actually good now.",
     tags: ["iconic", "only-in-denver", "group-friendly"],
     neighborhood: "Lakewood",
     address: "6715 W Colfax Ave, Lakewood, CO 80214",
     category: "attraction",
+  },
+  {
+    id: "sadboy-creamery",
+    name: "Sadboy Creamery",
+    description:
+      "The best ice cream in Denver by a mile, but sells out in seconds every Monday morning. Sign up for the drops for a chance at snagging a coveted small-batch pint.",
+    tags: ["ice-cream", "small-batch", "iconic"],
+    neighborhood: "Denver",
+    category: "shop",
+    featured: true,
+  },
+  {
+    id: "berkeley-supply",
+    name: "Berkeley Supply Company",
+    description:
+      "Well-curated men's shop with a focus on quality goods that last. Denim, boots, leather goods, and grooming essentials. Where I bought my favorite jacket ever.",
+    tags: ["clothing", "menswear", "local"],
+    neighborhood: "Berkeley",
+    address: "4439 W 44th Ave, Denver, CO 80212",
+    category: "shop",
   },
 ];
 

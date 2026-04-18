@@ -53,18 +53,17 @@ export function PlaceCard({ place }: { place: Place }) {
 
   return (
     <div className="stamp-shadow">
-      <article className="stamp-edge relative bg-cream p-3">
+      <article className={`stamp-edge relative bg-cream p-3 ${place.featured ? "pt-7" : ""}`}>
         <div
-          className={`relative flex h-full flex-col p-5 pt-4 ${place.featured ? "border-2 border-rust/50" : "border border-dashed border-forest/30"}`}
+          className={`relative flex h-full flex-col p-5 ${place.featured ? "border-2 border-rust/50 pt-6" : "border border-dashed border-forest/30 pt-4"}`}
         >
           {place.featured && (
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-cream px-4 py-0.5 font-hand text-[0.65rem] font-semibold uppercase tracking-wider text-rust">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cream px-3 py-0.5 font-hand text-[0.65rem] font-semibold uppercase tracking-wider text-rust">
               ★ Favorite
             </span>
           )}
 
-          {/* top row: category + denomination */}
-          <div className="mb-4 flex items-start justify-between gap-x-3">
+          <div className="mb-4">
             <div
               className={`inline-flex items-center gap-x-1.5 rounded-sm px-2 py-1 ring-1 ring-inset ${meta.bg} ${meta.ring} ${meta.text}`}
             >
@@ -76,7 +75,6 @@ export function PlaceCard({ place }: { place: Place }) {
                 {meta.label}
               </span>
             </div>
-
           </div>
 
           {/* name + neighborhood */}
@@ -103,17 +101,14 @@ export function PlaceCard({ place }: { place: Place }) {
             </a>
           </h3>
           {place.neighborhood && (
-            <p className="mt-1 font-hand text-xs font-semibold uppercase tracking-wider text-pine">
+            <p className="mt-1.5 font-hand text-sm font-semibold uppercase tracking-wider text-pine">
               {place.neighborhood}
             </p>
           )}
 
-          {/* description */}
-          <p className="mt-3 mb-5 max-w-[60ch] text-[0.95rem] leading-relaxed text-ink/85 text-pretty">
+          <p className="mt-3 max-w-[60ch] text-base text-ink/85 text-pretty">
             {place.description}
           </p>
-
-          {/* tags — hidden for now */}
         </div>
 
 
